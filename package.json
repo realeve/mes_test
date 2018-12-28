@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^23.6.0",
+        "xml2js": "^0.4.19"
+    }
+}
