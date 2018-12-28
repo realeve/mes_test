@@ -2,9 +2,7 @@
 let http = require('axios');
 let qs = require('qs');
 
-let dev = false;
-
-let host = dev ? 'http://localhost:90/api/' : 'http://api.cbpc.ltd/';
+let host = 'http://api.cbpc.ltd/';
 
 // 判断数据类型，对于FormData使用 typeof 方法会得到 object;
 let getType = (data) =>
@@ -39,14 +37,9 @@ let axios = async (option) => {
         }
       ]
     })(option)
-    .then(({ data }) => data)
-    .catch((e) => {
-      console.log(e);
-      return Promise.reject(e);
-    });
+    .then(({ data }) => data);
 };
 
 module.exports = {
-  axios,
-  dev
+  axios
 };

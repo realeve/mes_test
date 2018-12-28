@@ -1,5 +1,4 @@
 const math = require('./index');
-const { xml2js } = require('./lib/xml2js');
 const db = require('./lib/db');
 
 //  demo 1
@@ -7,15 +6,6 @@ test('单元测试demo', () => {
   expect(math.add(2, 6)).toBe(8);
 });
 
-// demo 2
-test('xml转json', async () => {
-  const xml = `<root>Hello xml2js!</root>`;
-  let res = await xml2js(xml);
-  console.log(res);
-  expect(res.root).toContain('Hello xml2js');
-});
-
-// demo 3
 test('ajax接口测试', async () => {
   let res = await db.getBasePeopleCounter();
   expect(res.header).toHaveLength(2);
