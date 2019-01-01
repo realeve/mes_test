@@ -11,8 +11,7 @@ const getJSONResult = (method, xml) => {
 
 module.exports.getData = async (method, args = null) => {
   let client = await soapClient.then(c => c[method + "Async"]);
-  let result = await client(args).then(response => getJSONResult(method, response).DBSET);
-  return result;
+  return client(args).then(response => getJSONResult(method, response).DBSET);
 }
 
 // module.exports.add = (a, b) => a + b;
