@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "test": "jest"
+        "test": "jest --coverage --coverageReporters=text-lcov | coveralls"
     },
     "dependencies": {
         "axios": "^0.18.0",
